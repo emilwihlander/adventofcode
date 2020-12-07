@@ -74,6 +74,7 @@ jobs:
         destination_repo: 'emilwihlander/emilwihlander.github.com'
         user_email: 'emilwihlander@outlook.com'
         user_name: 'emilwihlander'
+        destination_branch: 'main'
 
 
 
