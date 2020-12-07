@@ -54,6 +54,7 @@ jobs:
           path: index.html
   
   job_3:
+    needs: job_2
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
