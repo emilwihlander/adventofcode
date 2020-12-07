@@ -47,6 +47,34 @@ jobs:
           path: ./
         
       - run: node visualizer/visualizer.js
+      - name: Upload leaderboard
+        uses: actions/upload-artifact@v2
+        with:
+          name: index
+          path: index.html
+  
+  job_3:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+      
+    - uses: actions/download-artifact@v2
+      with:
+        name: index
+        path: ./
+
+    - name: Pushes test file
+      uses: dmnemec/copy_file_to_another_repo_action@v1.0.4
+      env:
+        API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+      with:
+        source_file: 'index.html'
+        destination_repo: 'emilwihlander/emilwihlander.github.com'
+        user_email: 'emilwihlander@outlook.com'
+        user_name: 'emilwihlander'
+        commit_message: 'updated html'
+
 
 
 
