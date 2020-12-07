@@ -31,7 +31,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: leaderboard
-          path: leaderboard.json
+          path: visualizer/leaderboard.json
           
   job_2:
     name: generate html
