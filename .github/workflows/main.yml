@@ -31,7 +31,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: leaderboard
-          path: visualizer/leaderboard.json
+          path: leaderboard.json
           
   job_2:
     name: generate html
@@ -44,7 +44,7 @@ jobs:
       - uses: actions/download-artifact@v2
         with:
           name: leaderboard
-          path: ./visualizer
+          path: ./
         
       - run: node visualizer/visualizer.js
 
