@@ -46,7 +46,7 @@ jobs:
           name: leaderboard
           path: ./visualizer
         
-      - run: node visualizer.js
+      - run: node visualizer/visualizer.js
 
 
 
