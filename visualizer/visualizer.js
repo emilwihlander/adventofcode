@@ -14,7 +14,7 @@ body {
   background: #0f0f23;
   color: #cccccc;
   font-family: "Source Code Pro", monospace;
-  font-size: 14pt;
+  font-size: 12pt;
 }
 
 a {
@@ -48,7 +48,7 @@ h1 {
 }
 
 .timelines {
-  width: 2285px;
+  width: 2074px;
 }
 
 .lower {
@@ -99,7 +99,7 @@ const append = `
 </html>
 `
 
-const timeline = '-----.-----|-----.-----|-----.-----|-----.-----|-----.-----|-----.-----|-----.-----|-----.-----|-----.-----|-----.-----|-----.-----|-----.-----|-----.-----|-----.-----|-----.-----|-----.-----|-----.-----|'
+const timeline = '-----.-----|-----.-----|-----.-----|-----.-----|-----.-----|-----.-----|-----.-----|-----.-----|-----.-----|-----.-----|-----.-----|-----.-----|-----.-----|-----.-----|-----.-----|-----.-----|-----.-----|-----.-----|'
 
 const generateTimeline = (day) => {
   const pad = (num) => ((num > 9) ? '' : '0') + num;
@@ -122,7 +122,7 @@ const generateTimeline = (day) => {
     .sort((a, b) => a.ts - b.ts)
     .forEach((entry, i) => {
       const color = (entry.first) ? 'silver' : 'gold';
-      const offset = Math.floor((entry.ts - (new Date('2020-12-' + pad(day) + 'T05:00:00Z')))/(17*60*60*1000)*2285)
+      const offset = Math.floor((entry.ts - (new Date('2020-12-' + pad(day) + 'T05:00:00Z')))/(18*60*60*1000)*2074)
       if (offset > 2285) return
       const dispTime = pad(entry.ts.getUTCHours()+1) + ':' + pad(entry.ts.getMinutes()) + ':' + pad(entry.ts.getSeconds());
       if (i % 2 == 0) upper.push(`<div class="${color}" style="left: ${offset+5}">-${dispTime} ${entry.name}</div>`);
