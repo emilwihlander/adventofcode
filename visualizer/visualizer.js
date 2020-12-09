@@ -123,7 +123,7 @@ const generateTimeline = (day) => {
     .forEach((entry, i) => {
       const color = (entry.first) ? 'silver' : 'gold';
       const offset = Math.floor((entry.ts - (new Date('2020-12-' + pad(day) + 'T05:00:00Z')))/(18*60*60*1000)*2074)
-      if (offset > 2285) return
+      if (offset > 2074) return
       const dispTime = pad(entry.ts.getUTCHours()+1) + ':' + pad(entry.ts.getMinutes()) + ':' + pad(entry.ts.getSeconds());
       if (i % 2 == 0) upper.push(`<div class="${color}" style="left: ${offset+5}">-${dispTime} ${entry.name}</div>`);
       else lower.push(`<div class="${color}" style="left: ${offset-300+5}">${entry.name} ${dispTime}-</div>`);
