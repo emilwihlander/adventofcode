@@ -88,7 +88,7 @@ h1 {
   <body>
     <header>
       <div><h1 class="glowing">Advent of Code</h1>Emil Wihlander's leaderboard</div>
-      <div><h1 class="green">&nbsp;&nbsp;&nbsp;year = <span class="glowing">2020</span></h1><span class="green">380632</span></div>
+      <div><h1 class="green">&nbsp;&nbsp;&nbsp;year = <span class="glowing">2021</span></h1><span class="green">380632</span></div>
     </header>
     <div class="timelines">
 `
@@ -104,7 +104,7 @@ const timeline = '-----.-----|-----.-----|-----.-----|-----.-----|-----.-----|--
 const generateTimeline = (day) => {
   const pad = (num) => ((num > 9) ? '' : '0') + num;
   const entry = (name, first, time) => ({first: first, name: name, ts: new Date(parseInt(time.get_star_ts) * 1000)});
-  const htmlElement = (upper, lower) => `<a href="https://adventofcode.com/2020/day/${day}"><h1>[Day <span class="green">${day}</span>]</h1></a><div class="upper">${upper.join('')}</div><div>${timeline}</div><div class="lower">${lower.join('')}</div>`;
+  const htmlElement = (upper, lower) => `<a href="https://adventofcode.com/2021/day/${day}"><h1>[Day <span class="green">${day}</span>]</h1></a><div class="upper">${upper.join('')}</div><div>${timeline}</div><div class="lower">${lower.join('')}</div>`;
 
   const upper = [];
   const lower = [];
@@ -122,7 +122,7 @@ const generateTimeline = (day) => {
     .sort((a, b) => a.ts - b.ts)
     .forEach((entry, i) => {
       const color = (entry.first) ? 'silver' : 'gold';
-      const offset = Math.floor((entry.ts - (new Date('2020-12-' + pad(day) + 'T05:00:00Z')))/(18*60*60*1000)*2074)
+      const offset = Math.floor((entry.ts - (new Date('2021-12-' + pad(day) + 'T05:00:00Z')))/(18*60*60*1000)*2074)
       if (offset > 2074) return
       const dispTime = pad(entry.ts.getUTCHours()+1) + ':' + pad(entry.ts.getMinutes()) + ':' + pad(entry.ts.getSeconds());
       if (i % 2 == 0) upper.push(`<div class="${color}" style="left: ${offset+5}">-${dispTime} ${entry.name}</div>`);
