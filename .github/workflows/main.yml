@@ -26,6 +26,8 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
+        env:
+          ADVENT_OF_CODE_TOKEN: ${{ secrets.ADVENT_OF_CODE_TOKEN }}
         run: node visualizer/download.js 
       - name: Upload leaderboard
         uses: actions/upload-artifact@v2
