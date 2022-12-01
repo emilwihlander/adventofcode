@@ -3,7 +3,7 @@ var https = require('https');
 var fs = require('fs');
 var options = {
     host: 'adventofcode.com',
-    path: '/2021/leaderboard/private/view/380632.json',
+    path: '/2022/leaderboard/private/view/380632.json',
     method: 'GET',
     headers: {
         "Cookie": `session=${process.env.ADVENT_OF_CODE_TOKEN}`,
