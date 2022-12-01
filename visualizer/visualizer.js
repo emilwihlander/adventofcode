@@ -112,8 +112,8 @@ const generateTimeline = (day) => {
   Object.values(leaderboard.members)
     .filter(m => m.completion_day_level[day])
     .flatMap(({name, completion_day_level}) => {
-      const first = completion_day_level[day][1];
-      const second = completion_day_level[day][2];
+      const first = completion_day_level[day]["1"];
+      const second = completion_day_level[day]["2"];
 
       const entries = [ entry(name, true, first) ];
       if (second) entries.push(entry(name, false, second));
@@ -122,7 +122,7 @@ const generateTimeline = (day) => {
     .sort((a, b) => a.ts - b.ts)
     .forEach((entry, i) => {
       const color = (entry.first) ? 'silver' : 'gold';
-      const offset = Math.floor((entry.ts - (new Date('2021-12-' + pad(day) + 'T05:00:00Z')))/(18*60*60*1000)*2074)
+      const offset = Math.floor((entry.ts - (new Date(entry.ts.getFullYear() + '-12-' + pad(day) + 'T05:00:00Z')))/(18*60*60*1000)*2074)
       if (offset > 2074) return
       const dispTime = pad(entry.ts.getUTCHours()+1) + ':' + pad(entry.ts.getMinutes()) + ':' + pad(entry.ts.getSeconds());
       if (i % 2 == 0) upper.push(`<div class="${color}" style="left: ${offset+5}">-${dispTime} ${entry.name}</div>`);
