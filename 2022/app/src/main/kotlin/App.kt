@@ -8,5 +8,6 @@ fun read(path: String): String =
     object {}.javaClass.getResource(path)!!.readText()
 
 fun main() {
-    day1()
+    //day1()
+    day2()
 }
