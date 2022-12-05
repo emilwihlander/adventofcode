@@ -5,7 +5,7 @@ fun priority(c: Char): Int {
     return c - 'a' + 1
 }
 fun day3() {
-    val lines = read("3.txt")
+    val lines = readAsString("3.txt")
     val rucksacks = lines
         .split("\n")
         .filter { it != "" }

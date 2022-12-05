@@ -1,7 +1,7 @@
 val convert = mapOf("A" to "X", "B" to "Y", "C" to "Z")
 
 fun day2() {
-    val lines = read("2.txt")
+    val lines = readAsString("2.txt")
 
     val strats = lines.split("\n").filter { it != "" }.map { it.split(" ") }
 

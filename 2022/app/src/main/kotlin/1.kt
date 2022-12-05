@@ -1,5 +1,5 @@
 fun day1() {
-    val lines = read("1.txt")
+    val lines = readAsString("1.txt")
 
     val elves = lines
         .split("\n\n")
