@@ -9,5 +9,6 @@ fun read(path: String): String =
 
 fun main() {
     //day1()
-    day2()
+    //day2()
+    day3()
 }
