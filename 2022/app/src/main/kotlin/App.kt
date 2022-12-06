@@ -9,5 +9,5 @@ fun readAsList(path: String): List<String> =
     object {}.javaClass.getResource(path)!!.readText().split("\n").dropLast(1)
 
 fun main() {
-    day5()
+    day6()
 }
