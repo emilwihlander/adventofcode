@@ -2,6 +2,7 @@ import java.time.LocalDate
 
 val solutions = listOf(
     day1,
+    day2,
 )
 
 fun readAsString(path: String): String =
