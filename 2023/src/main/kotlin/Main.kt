@@ -4,6 +4,7 @@ val solutions = listOf(
     day1,
     day2,
     day3,
+    day4,
 )
 
 fun readAsString(path: String): String =
