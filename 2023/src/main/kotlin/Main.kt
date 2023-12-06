@@ -6,6 +6,7 @@ val solutions = listOf(
     day3,
     day4,
     day5,
+    day6,
 )
 
 fun readAsString(path: String): String =
@@ -18,7 +19,6 @@ fun main(args: Array<String>) {
     val day = LocalDate.now().dayOfMonth
     val solution = solutions[day - 1]
 
-    println("Day $day")
     println("------TEST------")
     solution.solve("$day.test")
     println("------MAIN------")
