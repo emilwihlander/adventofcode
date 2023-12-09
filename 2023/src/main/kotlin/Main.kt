@@ -8,6 +8,7 @@ val solutions = listOf(
     day5,
     day6,
     day7,
+    day8,
 )
 
 fun readAsString(path: String): String =
@@ -17,7 +18,7 @@ fun readAsList(path: String): List<String> =
     object {}.javaClass.getResource(path)!!.readText().split("\n").dropLast(1)
 
 fun main(args: Array<String>) {
-    val day = LocalDate.now().dayOfMonth
+    val day = 8 //LocalDate.now().dayOfMonth
     val solution = solutions[day - 1]
 
     println("------TEST------")
