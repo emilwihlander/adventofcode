@@ -10,6 +10,7 @@ val solutions = listOf(
     day7,
     day8,
     day9,
+    day10,
 )
 
 fun readAsString(path: String): String =
