@@ -20,6 +20,12 @@ val solutions = listOf(
     day17,
     day18,
     day19,
+    day20,
+    day21,
+    day22,
+    day23,
+    day24,
+    day25,
 )
 
 fun readAsString(path: String): String =
@@ -29,7 +35,7 @@ fun readAsList(path: String): List<String> =
     object {}.javaClass.getResource(path)!!.readText().split("\n").dropLast(1)
 
 fun main(args: Array<String>) {
-    val day = 19 // LocalDate.now().dayOfMonth
+    val day = 25 // LocalDate.now().dayOfMonth
     val solution = solutions[day - 1]
 
     println("------TEST------")
